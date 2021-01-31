@@ -6,32 +6,32 @@ const subTotal = document.getElementById("sub-total");
 const vat = document.getElementById("vat");
 const total = document.getElementById("total");
 //plus-minus buttons
-const firstPlus = document.getElementById("first-plus");
-const firstMinus = document.getElementById("first-minus");
-const economyPlus = document.getElementById("economy-plus");
-const economyMinus = document.getElementById("economy-minus");
+// const firstPlus = document.getElementById("first-plus");
+// const firstMinus = document.getElementById("first-minus");
+// const economyPlus = document.getElementById("economy-plus");
+// const economyMinus = document.getElementById("economy-minus");
 
 //rough area
-firstPlus.addEventListener("click",function(){
-    plusButton(inputFirstClass);
-    // inputFirstClass.value = parseFloat(inputFirstClass.value) + 1;
-    // displayAmounts();
-});
-firstMinus.addEventListener("click",function(){
-    minusButton(inputFirstClass);
-    // inputFirstClass.value = parseFloat(inputFirstClass.value) - 1;
-    // displayAmounts();
-});
-economyPlus.addEventListener("click",function(){
-    plusButton(inputEconomyClass);
-    // inputEconomyClass.value = parseFloat(inputEconomyClass.value) + 1;
-    // displayAmounts();
-});
-economyMinus.addEventListener("click",function(){
-    minusButton(inputEconomyClass);
-    // inputEconomyClass.value = parseFloat(inputEconomyClass.value) - 1;
-    // displayAmounts();
-});
+// firstPlus.addEventListener("click",function(){
+//     plusButton(inputFirstClass);
+//     // inputFirstClass.value = parseFloat(inputFirstClass.value) + 1;
+//     // displayAmounts();
+// });
+// firstMinus.addEventListener("click",function(){
+//     minusButton(inputFirstClass);
+//     // inputFirstClass.value = parseFloat(inputFirstClass.value) - 1;
+//     // displayAmounts();
+// });
+// economyPlus.addEventListener("click",function(){
+//     plusButton(inputEconomyClass);
+//     // inputEconomyClass.value = parseFloat(inputEconomyClass.value) + 1;
+//     // displayAmounts();
+// });
+// economyMinus.addEventListener("click",function(){
+//     minusButton(inputEconomyClass);
+//     // inputEconomyClass.value = parseFloat(inputEconomyClass.value) - 1;
+//     // displayAmounts();
+// });
 
 function plusButton(ticketclass){
     ticketclass.value = parseFloat(ticketclass.value) + 1;
@@ -42,19 +42,27 @@ function minusButton(ticketclass){
     displayAmounts();
 }
 //button action area
-// const ticketInput = document.getElementById("ticket-input");
-// ticketInput.addEventListener("click",function(event){
+const ticketInput = document.getElementById("ticket-input");
+ticketInput.addEventListener("click",function(event){
     
-//     add(event.target.id);
-// });
+    add(event.target);
+});
 
-// function add(element){
-//     if(element == "first-plus"){
-//         inputFirstClass.value = parseFloat(inputFirstClass.value) + 1;
-    
-//     }
-//     displayAmounts();
-// }
+function add(element){
+    if(element.id == "first-plus"){
+        plusButton(inputFirstClass);    
+    }
+    if(element.id == "first-minus"){
+        minusButton(inputFirstClass);   
+    }
+    if(element.id == "economy-plus"){
+        plusButton(inputEconomyClass);   
+    }
+    if(element.id == "economy-minus"){
+        minusButton(inputEconomyClass);  
+    }
+    console.log(element);
+}
 
 
 //main event action area
