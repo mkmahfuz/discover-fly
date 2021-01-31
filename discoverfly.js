@@ -5,64 +5,6 @@ const inputEconomyClass = document.getElementById("input-economy-class");
 const subTotal = document.getElementById("sub-total");
 const vat = document.getElementById("vat");
 const total = document.getElementById("total");
-//plus-minus buttons
-// const firstPlus = document.getElementById("first-plus");
-// const firstMinus = document.getElementById("first-minus");
-// const economyPlus = document.getElementById("economy-plus");
-// const economyMinus = document.getElementById("economy-minus");
-
-//rough area
-// firstPlus.addEventListener("click",function(){
-//     plusButton(inputFirstClass);
-//     // inputFirstClass.value = parseFloat(inputFirstClass.value) + 1;
-//     // displayAmounts();
-// });
-// firstMinus.addEventListener("click",function(){
-//     minusButton(inputFirstClass);
-//     // inputFirstClass.value = parseFloat(inputFirstClass.value) - 1;
-//     // displayAmounts();
-// });
-// economyPlus.addEventListener("click",function(){
-//     plusButton(inputEconomyClass);
-//     // inputEconomyClass.value = parseFloat(inputEconomyClass.value) + 1;
-//     // displayAmounts();
-// });
-// economyMinus.addEventListener("click",function(){
-//     minusButton(inputEconomyClass);
-//     // inputEconomyClass.value = parseFloat(inputEconomyClass.value) - 1;
-//     // displayAmounts();
-// });
-
-function plusButton(ticketclass){
-    ticketclass.value = parseFloat(ticketclass.value) + 1;
-    displayAmounts();
-}
-function minusButton(ticketclass){
-    ticketclass.value = parseFloat(ticketclass.value) - 1;
-    displayAmounts();
-}
-//button action area
-const ticketInput = document.getElementById("ticket-input");
-ticketInput.addEventListener("click",function(event){
-    
-    add(event.target);
-});
-
-function add(element){
-    if(element.id == "first-plus"){
-        plusButton(inputFirstClass);    
-    }
-    if(element.id == "first-minus"){
-        minusButton(inputFirstClass);   
-    }
-    if(element.id == "economy-plus"){
-        plusButton(inputEconomyClass);   
-    }
-    if(element.id == "economy-minus"){
-        minusButton(inputEconomyClass);  
-    }
-    console.log(element);
-}
 
 
 //main event action area
@@ -73,8 +15,6 @@ inputFirstClass.addEventListener("change", function () {
 inputEconomyClass.addEventListener("change", function () {
     displayAmounts();
 });
-
-
 
 //common function after refactoring will be here (for bonus marks)
 function displayAmounts() {
@@ -93,6 +33,7 @@ function subTotalCalulator(first, second) {
     let subTotal = (firstNumber * 150) + (secondNumber * 100);
     return subTotal;
 }
+
 //vat calculation 
 function vatCalulator(amount) {
     const percent = 10; // vat is 10%
@@ -100,11 +41,45 @@ function vatCalulator(amount) {
     return vat;
 
 }
+
 //total calculation
 function totalCalculator(subtotal, vat) {
     let total = subtotal + vat;
     return total;
 }
+
+//signed buttons action area
+function plusButton(ticketclass) {
+    ticketclass.value = parseFloat(ticketclass.value) + 1;
+    displayAmounts();
+}
+function minusButton(ticketclass) {
+    ticketclass.value = parseFloat(ticketclass.value) - 1;
+    if (ticketclass.value < 0) { ticketclass.value = 0 };
+    displayAmounts();
+}
+
+//event capturing for signed buttons
+const ticketInput = document.getElementById("ticket-input");
+ticketInput.addEventListener("click", function (event) {
+    add(event.target);
+});
+//change the input value according to the signed buttons
+function add(element) {
+    if (element.id == "first-plus") {
+        plusButton(inputFirstClass);
+    }
+    if (element.id == "first-minus") {
+        minusButton(inputFirstClass);
+    }
+    if (element.id == "economy-plus") {
+        plusButton(inputEconomyClass);
+    }
+    if (element.id == "economy-minus") {
+        minusButton(inputEconomyClass);
+    }
+}
+
 
 //after Book Now display (for bonus marks) 
 const bookNowBtn = document.getElementById("book-now-btn");
@@ -115,8 +90,9 @@ bookNowBtn.addEventListener("click", function () {
     formContainer.style.display = "none";
 });
 
+//return to the tickect selection form 
 const changeBtn = document.getElementById("change-btn");
-changeBtn.addEventListener("click",function(){
+changeBtn.addEventListener("click", function () {
     ticketDetails.style.display = "none";
     formContainer.style.display = "block";
 });
