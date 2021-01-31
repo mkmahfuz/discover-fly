@@ -113,23 +113,54 @@
     </main>
     <!-- extra work - ticket confirm/print area for bonus marks -->
     <div class="main-content container">
-        <section id="ticket-print-area" class="row">
-            <div class="col-md-8">
-                <div id="ticket-details" class="box-type-1">
-                    <h4>Ticket Details</h4>
-                    <button id="print-btn" type="submit" class="btn btn-success">Print</button>
-                </div>
+        <section id="ticket-print-area">
+            <div id="ticket-details">
+                <h4>Ticket Details</h4>
+                <table id="ticket-table">
+                    <tr>
+                        <th>Ticket Class</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                        <th>Vat</th>
+                        <th>Total Price</th>
+                    </tr>
+                    <tr>
+                        <td>Fisrt Class</td>
+                        <td>2</td>
+                        <td>300</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Economy Class</td>
+                        <td>2</td>
+                        <td>200</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>50</td>
+                        <td>550</td>
+                    </tr>
+                </table>
+                <button id="print-btn" type="submit" onclick="window.print();">Print</button>
             </div>
-            <div class="col-md-4">
-                <div id="payment-method" class="box-type-1">
-                    <h4>Pay Now</h4>
-                    <input type="radio" id="visa-card" name="payment" value="visa">
-                    <label for="visa-card">VISA Card</label><br>
-                    <input type="radio" id="master-card" name="payment" value="master">
-                    <label for="master-card">MASTER Card</label><br>
 
-                    <button id="pay-btn" type="submit" class="btn-style">Pay</button>
-                </div>
+            <div id="payment-method">
+                <h4>Pay Now by</h4>
+                <input type="radio" id="visa-card" name="payment" value="visa">
+                <label for="visa-card">VISA Card</label><br>
+                <input type="radio" id="master-card" name="payment" value="master">
+                <label for="master-card">MASTER Card</label><br>
+            </div>
+            <div>
+                <button id="pay-btn" type="submit" class="btn-style">Pay</button>
+            </div>
+            <div>
+                <button id="change-btn" type="submit" class="">Change the Ticket</button>
             </div>
         </section>
     </div>

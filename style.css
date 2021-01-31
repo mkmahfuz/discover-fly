@@ -124,4 +124,25 @@ nav ul li a:hover, a.active{
 
 #ticket-print-area{
     display:none;
+
+}
+#ticket-details{
+    margin-bottom: 40px;
+}
+#payment-method{
+    margin-bottom: 20px;
+}
+#ticket-table ,th,td{
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+th,td{
+    padding: 10px;
+    text-align: center;
+}
+#print-btn{
+    margin-top: 20px;
+}
+#change-btn{
+    margin-top: 30px;
 }

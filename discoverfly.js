@@ -106,3 +106,9 @@ bookNowBtn.addEventListener("click", function () {
     ticketDetails.style.display = "block";
     formContainer.style.display = "none";
 });
+
+const changeBtn = document.getElementById("change-btn");
+changeBtn.addEventListener("click",function(){
+    ticketDetails.style.display = "none";
+    formContainer.style.display = "block";
+});
