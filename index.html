@@ -27,7 +27,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main class="main-content container" id="main-form-area">
         <div class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
@@ -40,7 +40,7 @@
             </div>
             <div class="inputs">
                 <div class="input-group">
-                    <label" for="">Departure</label>
+                    <label for="">Departure</label>
                     <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
@@ -48,32 +48,37 @@
                     <input class="inp-style" type="date" name="">
                 </div>
             </div>
-            <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+            <section id="ticket-input">
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">First Class ($150)</label>
+                        <input id="input-first-class" class="inp-style inp-width" type="number" name="" value="0"
+                            min="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <p><span class="plus-btn" id="first-plus">+</span> <span class="minus-btn"
+                                id="first-minus">-</span></p>
+                    </div>
                 </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
+
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">Economy ($100)</label>
+                        <input id="input-economy-class" class="inp-style inp-width" type="number" name="" value="0"
+                            min="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <p> <span id="economy-plus">+</span> <span id="economy-minus">-</span> </p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
-                </div>
-            </div>
+            </section>
             <div class="calculations">
                 <div class="amount">
                     <div class="left">
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p>$<span id="sub-total">0</span></p>
                     </div>
                 </div>
 
@@ -82,7 +87,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p>$<span id="vat">0</span></p>
                     </div>
                 </div>
                 <hr>
@@ -91,19 +96,45 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p>$<span id="total">0</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now-btn" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
+                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
+                voluptatibus quam</p>
         </div>
-    </section>
 
+    </main>
+    <!-- extra work - ticket confirm/print area for bonus marks -->
+    <div class="main-content container">
+        <section id="ticket-print-area" class="row">
+            <div class="col-md-8">
+                <div id="ticket-details" class="box-type-1">
+                    <h4>Ticket Details</h4>
+                    <button id="print-btn" type="submit" class="btn btn-success">Print</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="payment-method" class="box-type-1">
+                    <h4>Pay Now</h4>
+                    <input type="radio" id="visa-card" name="payment" value="visa">
+                    <label for="visa-card">VISA Card</label><br>
+                    <input type="radio" id="master-card" name="payment" value="master">
+                    <label for="master-card">MASTER Card</label><br>
+
+                    <button id="pay-btn" type="submit" class="btn-style">Pay</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- external jasascript soruce -->
+    <script src="discoverfly.js"></script>
     <!--Thank You-->
 </body>
 

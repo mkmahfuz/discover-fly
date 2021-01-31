@@ -72,6 +72,7 @@ nav ul li a:hover, a.active{
     margin-top: 10px;
     word-spacing: 20px;
 }
+
 .booking-form  .calculations{
     margin: 10px 0;
 }
@@ -119,4 +120,8 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+
+#ticket-print-area{
+    display:none;
 }
